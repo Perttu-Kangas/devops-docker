@@ -1,0 +1,4 @@
+perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/part1$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/part1$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE

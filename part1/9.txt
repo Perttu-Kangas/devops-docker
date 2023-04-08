@@ -1,0 +1,1 @@
+perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/part1/materials$ docker run -v "$(pwd)/textout.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service

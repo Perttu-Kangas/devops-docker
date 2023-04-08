@@ -1,0 +1,8 @@
+REPOSITORY                          TAG       IMAGE ID       CREATED       SIZE
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago   15.7MB
+
+perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/part1$ docker container run -d -it devopsdockeruh/simple-web-service:alpine 
+a2ab23caa98284754a8e5784fc95f3918681d603fed15ade7ef0f1998774488f
+perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/part1$ docker exec -it gracious_edison sh
+/usr/src/app # tail -f ./text.log 

@@ -1,0 +1,27 @@
+Some commands along the way:
+
+image ls
+image rm
+image pull
+container ls
+
+container run
+- -d run in background (detached)
+- t get inside container (tty)
+- -i interact with container (interactive)
+- -p <host-port>:<container-port>
+
+container rm
+container stop
+
+container exec
+- exec -it xyz bash
+
+container prune
+system prune
+
+pause
+unpause
+
+build
+- -t <name>

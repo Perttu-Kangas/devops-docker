@@ -1,0 +1,5 @@
+perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/part1$ docker container run -it devopsdockeruh/simple-web-service:ubuntu
+
+docker exec -it youthful_faraday bash
+root@13f6d25bf451:/usr/src/app# tail -f ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'

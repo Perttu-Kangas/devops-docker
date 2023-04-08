@@ -1,0 +1,7 @@
+Dockerfile:
+
+FROM devopsdockeruh/simple-web-service:alpine
+CMD server
+
+Run command:
+perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/part1/materials$ docker run -it web-server

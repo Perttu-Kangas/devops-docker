@@ -1,0 +1,34 @@
+Front: perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/material-applications/example-frontend$ docker build . -t example-front && docker run -p 5000:5000 example-front
+FROM node:16-alpine
+
+EXPOSE 5000
+
+WORKDIR /usr/src/app
+
+ENV REACT_APP_BACKEND_URL=http://localhost:8080/
+
+COPY package* ./
+
+RUN npm install && npm install -g serve
+
+COPY . .
+
+RUN npm run build
+
+CMD [ "serve", "-s", "-l", "5000", "build" ]
+
+Back: perttuka@lx1-fuxi224:~/VisualStudioCodeProjects/devops-docker/material-applications/example-backend$ docker build . -t example-back && docker run -p 8080:8080 example-back
+FROM golang:1.16-alpine
+
+EXPOSE 8080
+
+WORKDIR /usr/src/app
+
+ENV PORT=8080
+ENV REQUEST_ORIGIN=http://localhost:5000
+
+COPY . .
+
+RUN go build
+
+CMD [ "./server" ]
