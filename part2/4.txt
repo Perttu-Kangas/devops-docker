@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  example-front:
+    image: example-front
+    ports:
+      - 5000:5000
+    container_name: example-front
+    build: ../../material-applications/example-frontend
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8080
+  example-back:
+    image: example-back
+    ports:
+      - 8080:8080
+    container_name: example-back
+    build: ../../material-applications/example-backend
+    environment:
+      - PORT=8080
+      - REQUEST_ORIGIN=http://localhost:5000
+      - REDIS_HOST=back-redis
+    restart: unless-stopped
+  back-redis:
+    image: redis:alpine3.17
+    container_name: back-redis
