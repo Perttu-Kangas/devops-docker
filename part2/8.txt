@@ -3,12 +3,16 @@ version: '3.8'
 services:
   example-front:
     image: example-front
+    ports:
+      - 5000:5000
     container_name: example-front
     build: ../../material-applications/example-frontend
     environment:
       - REACT_APP_BACKEND_URL=http://localhost
   example-back:
     image: example-back
+    ports:
+      - 8080:8080
     container_name: example-back
     build: ../../material-applications/example-backend
     environment:
