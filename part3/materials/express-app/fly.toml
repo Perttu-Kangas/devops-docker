@@ -1,6 +1,7 @@
 app = "fly-builder-solitary-paper-2525"
 kill_signal = "SIGINT"
 kill_timeout = 5
+primary_region = "ord"
 processes = []
 
 [env]
