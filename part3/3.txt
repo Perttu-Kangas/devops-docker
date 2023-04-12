@@ -1,0 +1,22 @@
+Command e.g:
+./builder.sh Perttu-Kangas/csb-project deecaad/csb-project:latest
+
+----------
+builder.sh:
+#!/bin/bash
+
+GITHUB_REPO=$1
+DOCKERHUB_REPO=$2
+
+git clone "https://github.com/${GITHUB_REPO}.git"
+
+cd "$(basename "$GITHUB_REPO")"
+
+docker build -t "${DOCKERHUB_REPO}" .
+
+docker login
+
+docker image push "${DOCKERHUB_REPO}"
+
+cd ..
+rm -rf "$(basename "$GITHUB_REPO")"

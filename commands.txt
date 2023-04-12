@@ -7,7 +7,7 @@ container ls
 
 container run
 - -d run in background (detached)
-- t get inside container (tty)
+- -t get inside container (tty)
 - -i interact with container (interactive)
 - -p <host-port>:<container-port>
 

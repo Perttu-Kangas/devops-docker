@@ -1,0 +1,29 @@
+----------
+Dockerfile:
+FROM docker:23.0.3-cli
+
+COPY builder.sh .
+
+RUN chmod +x builder.sh
+
+ENTRYPOINT [ "./builder.sh" ]
+
+----------
+builder.sh:
+#!/bin/bash
+
+GITHUB_REPO=$1
+DOCKERHUB_REPO=$2
+
+git clone "https://github.com/${GITHUB_REPO}.git"
+
+cd "$(basename "$GITHUB_REPO")"
+
+docker build -t "${DOCKERHUB_REPO}" .
+
+docker login -u "$DOCKER_USER" -p "$DOCKER_PWD"
+
+docker image push "${DOCKERHUB_REPO}"
+
+cd ..
+rm -rf "$(basename "$GITHUB_REPO")"

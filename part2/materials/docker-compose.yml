@@ -4,13 +4,13 @@ services:
   example-front:
     image: example-front
     container_name: example-front
-    build: ../../material-applications/example-frontend
+    build: ../../../material-applications/example-frontend
     environment:
       - REACT_APP_BACKEND_URL=http://localhost
   example-back:
     image: example-back
     container_name: example-back
-    build: ../../material-applications/example-backend
+    build: ../../../material-applications/example-backend
     environment:
       - REDIS_HOST=back-redis
       - POSTGRES_HOST=back-db
